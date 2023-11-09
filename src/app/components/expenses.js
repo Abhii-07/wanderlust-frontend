@@ -13,7 +13,7 @@ const Expense = () => {
 
   useEffect(() => {
     // Fetch expenses from your Flask API and set them in the state
-    axios.get(`http://localhost:5000/expenses/${destinationId}`).then((response) => {
+    axios.get(`http://127.0.0.1:5000/expenses/${destinationId}`).then((response) => {
       setExpenses(response.data);
     });
   }, [destinationId]);
@@ -21,7 +21,7 @@ const Expense = () => {
   const onFinish = (values) => {
     // Send a POST request to your Flask API to add a new expense for the selected destination
     axios
-      .post('http://localhost:5000/expenses', {
+      .post('http://127.0.0.1:5000/expenses', {
         destination_id: destinationId,
         category: values.category,
         amount: values.amount,
@@ -51,7 +51,7 @@ const Expense = () => {
       .validateFields()
       .then((values) => {
         axios
-          .put(`http://localhost:5000/expenses/${editExpense.id}`, values)
+          .put(`http://127.0.0.1:5000/expenses/${editExpense.id}`, values)
           .then((response) => {
             const updatedExpenses = expenses.map((exp) =>
               exp.id === response.data.id ? response.data : exp
@@ -71,7 +71,7 @@ const Expense = () => {
 
   const handleDelete = (expense) => {
     axios
-      .delete(`http://localhost:5000/expenses/${expense.id}`)
+      .delete(`http://127.0.0.1:5000/expenses/${expense.id}`)
       .then(() => {
         const updatedExpenses = expenses.filter((exp) => exp.id !== expense.id);
         setExpenses(updatedExpenses);
@@ -82,7 +82,7 @@ const Expense = () => {
   };
 
   const handleSearch = () => {
-    axios.get(`http://localhost:5000/expenses/${searchId}`).then((response) => {
+    axios.get(`http://127.0.0.1:5000/expenses/${searchId}`).then((response) => {
       setSearchedExpenses(response.data);
     });
   };

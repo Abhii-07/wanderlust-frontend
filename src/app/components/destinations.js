@@ -13,7 +13,7 @@ const Destination = () => {
 
     const handleSearch = () => {
         // Send a GET request to fetch a specific destination by ID
-        axios.get(`http://localhost:5000/destinations/${searchId}`)
+        axios.get(`http://127.0.0.1:5000/destinations/${searchId}`)
           .then((response) => {
             console.log(response.data);
             setSearchedDestination(response.data); // Update the state with the fetched destination
@@ -28,7 +28,7 @@ const Destination = () => {
 
     useEffect(() => {
         // Fetch destinations from your Flask API and set them in the state
-        axios.get('http://localhost:5000/destinations').then((response) => {
+        axios.get('http://127.0.0.1:5000/destinations').then((response) => {
             setDestinations(response.data);
         });
     }, []);
@@ -36,7 +36,7 @@ const Destination = () => {
     const onFinish = (values) => {
         // Send a POST request to your Flask API to add a new destination
         axios
-            .post('http://localhost:5000/destinations', values)
+            .post('http://127.0.0.1:5000/destinations', values)
             .then((response) => {
                 // Update the destinations list with the newly added destination
                 setDestinations([...destinations, response.data]);
@@ -65,7 +65,7 @@ const Destination = () => {
             .then((values) => {
                 // Send a PUT request to update the destination
                 axios
-                    .put(`http://localhost:5000/destinations/${editDestination.id}`, values)
+                    .put(`http://127.0.0.1:5000/destinations/${editDestination.id}`, values)
                     .then((response) => {
                         // Update the destinations list with the edited destination
                         const updatedDestinations = destinations.map((dest) =>
@@ -88,7 +88,7 @@ const Destination = () => {
     const handleDelete = (destination) => {
         // Send a DELETE request to delete the destination
         axios
-            .delete(`http://localhost:5000/destinations/${destination.id}`)
+            .delete(`http://127.0.0.1:5000/destinations/${destination.id}`)
             .then(() => {
                 // Remove the deleted destination from the destinations list
                 const updatedDestinations = destinations.filter((dest) => dest.id !== destination.id);
