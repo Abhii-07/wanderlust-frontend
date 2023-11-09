@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
 import { Breadcrumb, Layout, Menu, Dropdown, Avatar, Typography, theme } from 'antd';
-// import { UserButton } from "@clerk/nextjs";
 import Destinations from "./destinations"
 import Itinerary from './Itinerary';
 import Expenses from './expenses';
 
-const { Header, Content, Sider } = Layout;
+const { Header, Content, Sider, Footer } = Layout;
 const { Title } = Typography;
 
 const subnavItems = [
@@ -48,17 +47,8 @@ const Dashboard = () => {
                 }}
             >
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                    {/* <img
-                        src="/assets/logo.png"
-                        alt="Logo"
-                        style={{
-                            width: '230px',
-                            height: 'auto',
-                        }}
-                    /> */}
                     Travel Palnner
                 </div>
-                {/* <UserButton afterSignOutUrl="/" /> */}
             </Header>
 
             <Layout>
@@ -111,6 +101,7 @@ const Dashboard = () => {
                     </Content>
                 </Layout>
             </Layout>
+            <Footer style={{ textAlign: 'center', background: '#e05257', color: 'white' }}>© {new Date().getFullYear()} Travel Planner</Footer>
         </Layout>
     );
 };
