@@ -47,8 +47,9 @@ const Dashboard = () => {
                 }}
             >
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                    Travel Palnner
+                    <Title>Travel Planner</Title>
                 </div>
+
             </Header>
 
             <Layout>
