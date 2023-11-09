@@ -12,7 +12,7 @@ const Itinerary = () => {
   useEffect(() => {
     // Fetch itineraries from your Flask API and set them in the state
     console.log('Fetching itineraries with destinationId:', destinationId);
-    axios.get(`http://127.0.0.1:5000/itineraries/${destinationId}`).then((response) => {
+    axios.get(`http://localhost:5000/itineraries/${destinationId}`).then((response) => {
       console.log('Received itineraries:', response.data);
       setItineraries(response.data);
     });
@@ -22,7 +22,7 @@ const Itinerary = () => {
     // Send a POST request to your Flask API to add a new itinerary activity for the selected destination
     console.log('Adding itinerary for destinationId:', destinationId);
     axios
-      .post('http://127.0.0.1:5000/itineraries', {
+      .post('http://localhost:5000/itineraries', {
         destination_id: destinationId, // Add the selected destination ID
         activity: values.activity,
       })
@@ -41,7 +41,7 @@ const Itinerary = () => {
   const handleSearch = () => {
     // Send a GET request to fetch itinerary activities for a specific destination by ID
     console.log('Searching for itineraries with destinationId:', searchId);
-    axios.get(`http://127.0.0.1:5000/itineraries/${searchId}`).then((response) => {
+    axios.get(`http://localhost:5000/itineraries/${searchId}`).then((response) => {
       console.log('Searched itineraries:', response.data);
       setSearchedItineraries(response.data);
     });
