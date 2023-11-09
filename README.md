@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Travel Planner Web App 🌍
+
+Welcome to the Travel Planner web app, a tool for organizing your travel itineraries, expenses, and more! ✈️🏖️
+
+## Features
+- 📅 Plan and organize your trip itineraries.
+- 💰 Keep track of your travel expenses.
+- 🏞️ Manage your destinations and activities.
+- 🔍 Search and filter your data easily.
+
+## Endpoints
+- **Itinerary**:
+  - `POST /itineraries`: Create a new itinerary activity for a destination.
+  - `GET /itineraries/:destination_id`: Get all itinerary activities for a specific destination.
+  - `PUT /itineraries/:itinerary_id`: Update a specific itinerary activity by ID.
+  - `DELETE /itineraries/:itinerary_id`: Delete a specific itinerary activity by ID.
+
+- **Expense**:
+  - `POST /expenses`: Create a new expense for a destination.
+  - `GET /expenses/:destination_id`: Get all expenses for a specific destination.
+  - `PUT /expenses/:expense_id`: Update a specific expense by ID.
+  - `DELETE /expenses/:expense_id`: Delete a specific expense by ID.
+
+- **Destination**:
+  - `POST /destinations`: Create a new destination.
+  - `GET /destinations`: Get all destinations.
+  - `PUT /destinations/:destination_id`: Update a specific destination by ID.
+  - `DELETE /destinations/:destination_id`: Delete a specific destination by ID.
 
 ## Getting Started
+1. Clone the repository.
+2. Set up your backend using Flask.
+3. Set up your frontend using React.
+4. Run the development server.
+5. Start planning your travels!
 
-First, run the development server:
+## Technologies Used
+- Flask (Python)
+- React (JavaScript)
+- Ant Design (UI Framework)
+- Axios (HTTP Requests)
+- SQLAlchemy (Database)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## License
+This project is licensed under the MIT License.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Enjoy your travel planning adventure! 🌴✨
